@@ -15,7 +15,8 @@ export async function PUT(request, { params }) {
 
     await connectDB();
 
-    const todo = await Todo.findOne({ _id: params.id, userId });
+    const { id } = await params;
+    const todo = await Todo.findOne({ _id: id, userId });
 
     if (!todo) {
       return NextResponse.json({ error: 'Todo not found' }, { status: 404 });
@@ -47,7 +48,8 @@ export async function DELETE(request, { params }) {
 
     await connectDB();
 
-    const todo = await Todo.findOneAndDelete({ _id: params.id, userId });
+    const { id } = await params;
+    const todo = await Todo.findOneAndDelete({ _id: id, userId });
 
     if (!todo) {
       return NextResponse.json({ error: 'Todo not found' }, { status: 404 });

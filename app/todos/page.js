@@ -165,7 +165,7 @@ export default function Todos() {
             </div>
           ) : (
             todos.map((todo) => (
-              <div key={todo._id} className="bg-white p-4 rounded shadow">
+              <div key={todo._id} className="bg-white p-4 rounded shadow text-gray-500">
                 {editing === todo._id ? (
                   // edit mode
                   <EditForm
