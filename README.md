@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Full-Stack Todo App with Authentication
 
-## Getting Started
+A full-stack Todo application built using **Next.js**, featuring **JWT-based authentication**, secure session management, and full CRUD functionality for todos. Each user can manage only their own todos with proper authorization.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- User Registration & Login (Email + Password)
+- JWT-based Session Management
+- Password Hashing using bcrypt
+- Protected Routes (Authenticated access only)
+- Create, Read, Update, Delete Todos
+- Todo Status: Pending / Completed
+- Filter Todos (All / Pending / Completed)
+- Responsive UI
+- Persistent Data Storage with MongoDB
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+**Frontend**
+- Next.js
+- CSS / Tailwind CSS
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Backend**
+- Node.js
+- API Routes (RESTful)
+- JWT for authentication
 
-## Learn More
+**Database**
+- MongoDB (Persistent storage)
 
-To learn more about Next.js, take a look at the following resources:
+**Security**
+- Password hashing (bcrypt)
+- Authorization checks for todo ownership
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Frontend: Vercel 
+- Database: MongoDB Atlas
