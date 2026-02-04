@@ -9,6 +9,7 @@ export async function POST(request) {
   try {
     const { email, password } = await request.json();
 
+    // check if email and password exist
     if (!email || !password) {
       return NextResponse.json(
         { error: 'Email and password required' },
@@ -26,6 +27,7 @@ export async function POST(request) {
       );
     }
 
+    // check password
     const isValidPassword = await bcrypt.compare(password, user.password);
     if (!isValidPassword) {
       return NextResponse.json(
@@ -48,10 +50,10 @@ export async function POST(request) {
       message: 'Login successful',
       user: { id: user._id, email: user.email },
     });
-  } catch (error) {
-    console.error('Login error:', error);
+  } catch (err) {
+    console.log('Login error:', err); 
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Something went wrong' },
       { status: 500 }
     );
   }
