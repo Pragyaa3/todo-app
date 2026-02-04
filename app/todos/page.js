@@ -105,7 +105,7 @@ export default function Todos() {
         
         {/* header */}
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-bold">My Todos</h1>
+          <h1 className="text-3xl font-bold text-gray-500">My Todos</h1>
           <button onClick={logout} className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
             Logout
           </button>
@@ -119,7 +119,7 @@ export default function Todos() {
               placeholder="What needs to be done?"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="w-full px-3 py-2 border mb-3 rounded"
+              className="w-full px-3 py-2 border mb-3 rounded text-gray-400"
               required
             />
             <input
@@ -127,7 +127,7 @@ export default function Todos() {
               placeholder="Description (optional)"
               value={desc}
               onChange={(e) => setDesc(e.target.value)}
-              className="w-full px-3 py-2 border mb-3 rounded"
+              className="w-full px-3 py-2 border mb-3 rounded text-gray-400"
             />
             <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
               Add Todo
@@ -145,13 +145,13 @@ export default function Todos() {
           </button>
           <button
             onClick={() => setFilter('pending')}
-            className={`px-4 py-2 rounded ${filter === 'pending' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+            className={`px-4 py-2 rounded ${filter === 'pending' ? 'bg-blue-500 text-white' : 'bg-pink-400'}`}
           >
             Pending ({pending})
           </button>
           <button
             onClick={() => setFilter('completed')}
-            className={`px-4 py-2 rounded ${filter === 'completed' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+            className={`px-4 py-2 rounded ${filter === 'completed' ? 'bg-blue-500 text-white' : 'bg-green-400'}`}
           >
             Completed ({completed})
           </button>
